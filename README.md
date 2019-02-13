@@ -9,4 +9,4 @@
 7. Show the data (html table with all the objects)
 8. Create data
 9. Delete data
-10. Update date
+10. Update data

@@ -1,0 +1,25 @@
+<%= form_with(model: product, local: true) do |form| %>
+    <div class="form-group">
+        <%= form.label :name %>
+        <%= form.text_field :name , :class => 'form-control' %>
+    </div>
+
+    <div class="form-group">
+        <%= form.label :description %>
+        <%= form.text_area :description , :class => 'form-control', :row => "3" %>
+    </div>
+
+    <%= form.submit :class => "btn btn-primary btn-lg btn-block" %>
+
+    <% if product.errors.any? %>
+        <div class="card container_padding container_margin" id="error_explanation">
+            <h4>Opps something went wrong</h4>
+            <ul>
+                <% product.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+<% end %>
+
