@@ -1,0 +1,28 @@
+
+<%= button_to "Back", products_path, method: :get, :class => 'btn btn-primary btn-lg float-left container_margin'  %>
+
+<div class="container container_padding">
+
+   <h1 class="text-center">Product</h1>
+    <div class="row justify-content-center container_padding">
+        <div class="col-7">
+            <div class="card container_padding">
+                <div class="row">
+                    <div class="col">
+                        <p>
+                            <strong>Name:</strong>
+                            <%= @product.name %>
+                        </p>
+
+                        <p>
+                            <strong>Description:</strong>
+                            <%= @product.description %>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
