@@ -1,4 +1,14 @@
 <div class="container container_padding">
+
+    <% if !notice.blank? %>
+      <div class="alert alert-info alert-dismissible fade show" role="alert">
+        <%= notice %>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <% end %>
+
     <%= button_to "Create product", new_product_path, method: :get, :class => 'btn btn-primary btn-lg float-right container_margin'  %>
 
     <table class="table">
@@ -6,7 +16,7 @@
           <tr>
             <th scope="col">Name</th>
             <th scope="col">Description</th>
-            <th scope="col">Action</th>
+            <th scope="col" colspan="3">Action</th>
           </tr>
         </thead>
         <tbody>
@@ -14,9 +24,8 @@
             <tr>
               <td><%= product.name%></td>
               <td><%= product.description%></td>
-              <td>
-              
-              
+              <td><%= link_to 'Edit', edit_product_path(product) %></td>
+              <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
               </td>
             </tr>
           <% end %>
